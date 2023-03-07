@@ -3,7 +3,7 @@ def maxProdSubarray(nums: list[int])-> int:
 
     # using Kadane's algorithm - but with max and min both
     curr_max, curr_min = 1, 1
-    max_prod = max(nums)
+    max_prod = nums[0]
 
     for n in nums:
         x = max(curr_max * n, curr_min * n, n)
