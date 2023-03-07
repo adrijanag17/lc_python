@@ -14,7 +14,7 @@ def prodExceptSelf(nums: list[int])->list[int]:
     
     return answer
 
-# time - O() space - O()
+# time - O(n) space - O(1)
 def productExceptSelf(nums: list[int])-> list[int]:
 
     answer = [1] * len(nums)
