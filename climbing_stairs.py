@@ -9,6 +9,8 @@ def climbing_stairs_rec(n: int) -> int:
 # dp
 # time - O(n) space - O(n)
 def climbing_stairs(n: int) -> int:
+    if n <= 2:
+        return n
     dp = [0] * (n+1)
     dp[0] = 1
     dp[1] = 1
@@ -20,10 +22,9 @@ def climbing_stairs(n: int) -> int:
 
 
 def main():
+    print(climbing_stairs(1))
+    print(climbing_stairs(2))
     print(climbing_stairs(3))
     print(climbing_stairs(4))
-    print(climbing_stairs(5))
-    print(climbing_stairs(6))
-    print(climbing_stairs(7))
 
 main()
