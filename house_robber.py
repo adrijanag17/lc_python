@@ -11,8 +11,20 @@ def house_robber(nums: list[int]) -> int:
     return dp[0]
 
 
+# time - O(n) space - O(1)
+def house_robber_better(nums: list[int]) -> int:
+    rob1, rob2 = 0, 0
+    # [rob1, rob2, nums[i], nums[i+1], nums[i+2], ...]
+    for n in nums:
+        temp = max(rob1 + n, rob2)
+        rob1 = rob2
+        rob2 = temp
+    return rob2
+
+
 def main():
     print(house_robber([1, 2, 3, 1]))
+    print(house_robber_better([1, 2, 3, 1]))
 
 
 main()
