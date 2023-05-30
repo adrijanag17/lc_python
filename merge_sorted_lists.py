@@ -1,13 +1,13 @@
 class ListNode:
     def __init__(self, val=0, next=None):
-        this.val = val
-        this.next = next
+        self.val = val
+        self.next = next
 
 
 class Solution:
     
     # time - O(n) space - O(1)
-    def merge_two_lists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def merge_two_lists(self, list1: ListNode, list2: ListNode) -> ListNode:
         dummy = ListNode()
         tail = dummy
 
