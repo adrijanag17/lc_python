@@ -1,12 +1,12 @@
 class ListNode:
     def __init__(self, val=0, next=None):
-        this.val = val
-        this.next = next
+        self.val = val
+        self.next = next
 
 
 class Solution:
     # time - O(n) space - O(1)
-    def has_cycle(self, head: Optional[ListNode]) -> bool:
+    def has_cycle(self, head: ListNode) -> bool:
         
         slow, fast = head, head
 
