@@ -25,3 +25,29 @@ class Solution:
 
         inorder_dfs(root)
         return inorder[k-1]
+
+    
+    # alternatively - without the additional list space
+    def kth(self, root: TreeNode, k: int) -> int:
+        n, val = 0, float("inf")
+
+        def dfs(node):
+            nonlocal n, val
+            if not node:
+                return
+            
+            if node.left:
+                dfs(node.left)
+            if n != k:
+                n += 1
+            else:
+                return
+            if n == k:
+                val = node.val
+                return
+            if node.right:
+                dfs(node.right)
+
+        dfs(root)
+        return val
+            
