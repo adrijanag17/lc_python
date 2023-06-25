@@ -1,3 +1,5 @@
+from heapq import heapify, heappush, heappop
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -40,9 +42,35 @@ class Solution:
 
             tail = tail.next
         
-        if l1:
-            tail.next = l1
+        if list1:
+            tail.next = list1
         else:
-            tail.next = l2
+            tail.next = list2
 
         return dummy.next
+    
+
+    
+    # time - O(nlogk) space - O(k) where n is the total number of nodes across all lists
+    def merge_heap(self, lists: list[ListNode]) -> ListNode:
+        heap = []
+        heapify(heap)
+        dummy = ListNode()
+        tail = dummy
+
+        for i, node in enumerate(lists):
+            if node:
+                heappush(heap, (node.val, i, node))
+
+        while heap:
+            _, i, node = heappop(heap)
+            tail.next = node
+            tail = tail.next
+
+            if node.next:
+                heappush(heap, (node.next.val, i, node.next))
+
+        return dummy.next
+
+
+
