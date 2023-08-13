@@ -8,7 +8,7 @@ class TreeNode:
 
 class Solution:
 
-    # time - O(n) space - O(n)
+    # time - O(n) space - O(n/2) = O(n)
     def goodNodes(self, root: TreeNode) -> int:
 
         count = 0
