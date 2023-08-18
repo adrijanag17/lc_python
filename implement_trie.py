@@ -45,7 +45,7 @@ class Trie2:
     
     
     # time - O(n) space - O(26.n)
-    ef insert(self, word):
+    def insert(self, word):
         cur = self.root
         for c in word:
             if c not in cur.children:
